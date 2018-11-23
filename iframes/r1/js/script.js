@@ -93,6 +93,7 @@ var up_event = 'mouseup';
 var down_event = 'mousedown';
 
 if ("ontouchstart" in window) {
+	alert("hola")
 move_event = 'touchmove';
 up_event = 'touchend';
 down_event = 'touchstart';
@@ -113,6 +114,9 @@ if (e.touches.length != 2) {
 }
 if (e.touches.length == 2) {
 scaling = true;
+
+alert("DOS DEDOS TOCANDO")
+
 }
 }
 //Con touchmove
@@ -140,7 +144,6 @@ prevDiff = -1;
 scaling = false;
 
 }
-
 
 
 
