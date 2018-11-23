@@ -93,13 +93,18 @@ var up_event = 'mouseup';
 var down_event = 'mousedown';
 
 if ("ontouchstart" in window) {
-	alert("hola")
 move_event = 'touchmove';
 up_event = 'touchend';
 down_event = 'touchstart';
 }
+
+
+
 rxStart = "ontouchstart" in window ? e.targetTouches[0].pageX : e.screenX;
 ryStart = "ontouchstart" in window ? e.targetTouches[0].pageY : e.screenY;
+
+
+
 if (e.touches.length == 2) {
 var xStart = "ontouchstart" in window ? e.targetTouches[1].pageX : 0;
 var yStart = "ontouchstart" in window ? e.targetTouches[1].pageY : 0;
@@ -108,6 +113,7 @@ var prevDiff = -1;
 var scaling = false;
 //Con touchstart
 if ("ontouchstart" in window) {
+	alert("UN DEDO")
 //var touches = e.changedTouches;
 if (e.touches.length != 2) {
 //Aquí hacemos lo que se tenga que hacer cuando se usa un dedo
