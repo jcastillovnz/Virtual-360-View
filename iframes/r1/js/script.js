@@ -87,10 +87,16 @@ var newheight =  parseInt(currheight)  + amount;
  $('.highlights').css("height" , newheight);
   }
   }
-///TOUCH ZOOM
+///TOUCH ZOOMvar move_event = 'mousemove';
+
 var move_event = 'mousemove';
+
 var up_event = 'mouseup';
+
 var down_event = 'mousedown';
+
+
+
 
 if ("ontouchstart" in window) {
 move_event = 'touchmove';
@@ -99,61 +105,92 @@ down_event = 'touchstart';
 }
 
 
-
-rxStart = "ontouchstart" in window ? e.targetTouches[0].pageX : e.screenX;
+window.('ontouchstart')
+rxStart = "ontouchstart" in window  e.targetTouches[0].pageX : e.screenX;
 ryStart = "ontouchstart" in window ? e.targetTouches[0].pageY : e.screenY;
+
+window.addEventListener("touchstart", myFunction);
 
 
 
 if (e.touches.length == 2) {
+
 var xStart = "ontouchstart" in window ? e.targetTouches[1].pageX : 0;
+
 var yStart = "ontouchstart" in window ? e.targetTouches[1].pageY : 0;
+
 }
+
 var prevDiff = -1;
 var scaling = false;
-//Con touchstart
+
+//Con touchstar
 if ("ontouchstart" in window) {
-	alert("UN DEDO")
 //var touches = e.changedTouches;
 if (e.touches.length != 2) {
 //Aquí hacemos lo que se tenga que hacer cuando se usa un dedo
 }
+
 if (e.touches.length == 2) {
+
 scaling = true;
 
-alert("DOS DEDOS TOCANDO")
+alert("DOS DEDOS");
 
 }
+
 }
+
 //Con touchmove
 if(scaling) {
 // Calculate the distance between the two pointers
+
 var curDiff = Math.abs(ev.targetTouches[0].pageX - ev.targetTouches[1].pageX);
+
 if (prevDiff > 0) {
+
 if (curDiff > prevDiff) {
+
 // The distance between the two pointers has decreased
-changeZoom(10, e);
+
+zoomMas();
+
 }
+
 if (curDiff < prevDiff) {
+
 // The distance between the two pointers has increased
-changeZoom(-10 , e);
+
+zoomMenos();
+
 }
+
 }
 
 // Cache the distance for the next move event
+
 prevDiff = curDiff;
+
 }
+
 //Con touchend
+
 if(scaling) {
+
 zoomEnd(e);
+
 prevDiff = -1;
+
 scaling = false;
 
 }
 
 
 
-});
+
+
+
+}); ///END FUCTION MAIN
 
 
 
