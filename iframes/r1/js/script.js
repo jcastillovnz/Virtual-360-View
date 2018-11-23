@@ -105,11 +105,20 @@ down_event = 'touchstart';
 }
 
 
+
+
+window.addEventListener("touchstart", ventana(e));
+
+function ventana(e) {
+x=event.clientX;
+y=event.clientY;
+}
+
+
 window.('ontouchstart')
 rxStart = "ontouchstart" in window  e.targetTouches[0].pageX : e.screenX;
 ryStart = "ontouchstart" in window ? e.targetTouches[0].pageY : e.screenY;
 
-window.addEventListener("touchstart", myFunction);
 
 
 
